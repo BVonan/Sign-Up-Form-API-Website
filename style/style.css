@@ -1,0 +1,34 @@
+html{
+    height: 100%;
+    width: 100%;
+  }
+  
+  body{
+      margin: 0 auto;
+      padding:25px;
+      width: 850px;
+      height:100px;
+      text-align: center;
+      font-family: Monospace;
+      font-style: oblique;
+      background-image: url("https://images.unsplash.com/photo-1531386450450-969f935bd522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcGljYWwlMjB3YXRlcnxlbnwwfHwwfHw%3D&w=1000&q=80");    
+  }
+  
+  #city{   
+      font-size:20px;
+  }
+  #lat{   
+      font-size:20px;
+  }
+  #lon{   
+      font-size:20px;
+  }
+  
+  #st{
+      font-size:20px;
+  }
+  
+  #ct{
+      font-size:20px;
+  }
+  
