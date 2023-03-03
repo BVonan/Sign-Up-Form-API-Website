@@ -89,23 +89,22 @@ async function suggestedPassword() {
 }
 
 // desired username
-function desiredUsername() {
+async function desiredUsername() {
     let username = document.querySelector("#username").value;
     let flag = true;
-    // under username html, put a span tag with an id. then i can chnage the class on the username image 
-    let users = ["eeny", "meeny", "miny", "maria"];
-    for (let i = 0; i < users.length; i++) {
-        if (username == users[i]) {
-            document.querySelector("#users").innerHTML = "Username is taken <br>";
+    let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`;
+    let data = await fetchData(url);
+    if (data.available !== undefined) {
+        if (data.available === true) {
+            document.querySelector("#users").innerHTML = "Username is available<br>";
+            document.querySelector("#users").style.color = "green";
+        } else {
+            document.querySelector("#users").innerHTML = "Username is taken<br>";
             document.querySelector("#users").style.color = "red";
             flag = false;
         }
-
     }
-    if (flag == true) {
-        document.querySelector("#users").innerHTML = "Username is available<br>";
-        document.querySelector("#users").style.color = "green";
-    }
+    return flag;
 }
 
 function signUp(){
